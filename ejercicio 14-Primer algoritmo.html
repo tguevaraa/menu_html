@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    header {
+        background: #0073e6;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #005bb5;
+        padding: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        padding: 20px;
+        background-color: #fff;
+        margin: 20px auto;
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background: #0073e6;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <header align="center"><img src="img/cropped-LOGO-UNEMI-2.png" height="250"> 
+    <h2 align="center"><a href="menu_principal.html">Regresar</a></h2>
+    </header>
+
+    <main>
+        <table align="center" border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h1>Numero Perfecto</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Escriba un numero entero</td>
+                    <td><input type="numero" id="numero"></td>
+                </tr>
+                <tr>
+                    <td>respuesta</td>
+                    <td align="center"><input type="text" id="myInput"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td align="center" colspan="2"><button onclick="ejercicio14()">Verificar</button></td>
+            </tr>
+            </tfoot>
+        </table>
+    </main>
+</body>
+<script>
+    function ejercicio14(){
+    let z= 1, s=0;
+    let n= document.getElementById("numero").value
+
+    while (z<n) {
+        if (n % z == 0) {
+            s= s+z;
+        }
+        z=z+1;
+    }
+    
+    if (n==s) {
+        document.getElementById("myInput").value= "El numero es perfecto";
+    } else {
+        document.getElementById("myInput").value= "El numero NO es perfecto"
+    }
+}
+
+</script>
+</html>

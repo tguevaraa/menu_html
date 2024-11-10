@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Potencias</title>
+</head>
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005bb5;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0073e6;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+<body>
+    <header>
+        <img src="./img/cropped-LOGO-UNEMI-2.png" height="200" alt="">
+        <img align="right" src="./img/chipi-chipi-chapa-chapa.gif" height="90" alt="">
+        <h2>Calculadora de Potencias <a href="menu_principal.html">regresar</a> </h2>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h3>Calculadora de Potencias</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ingrese la base</td>
+                    <td>
+                        <input type="base"id="id-text-numero">
+                    </td>
+                </tr>
+                <tr>
+                    <td>ingrese el exponente</td>
+                    <td>
+                        <input type="expotente"id="id-text-numero-2">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="rigth">respuesta: </td>
+                    <td><input type="text" readonly id="id-text-respuesta"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button onclick="CalculadoraPotencias()">validar</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>    
+    <script>
+
+        function CalculadoraPotencias(){
+            let base, expo, contador = 1, resultado = 1;
+            base = document.getElementById("id-text-numero").value;
+            expo = document.getElementById("id-text-numero-2").value;
+
+            if (expo == 0){
+                resultado = base * 1
+            }
+            else{
+                while (contador <= expo){
+                    resultado = base * resultado
+                    contador ++
+                }
+            }
+
+            document.getElementById("id-text-respuesta").value= resultado
+                }
+
+    </script>
+</body>
+</html>

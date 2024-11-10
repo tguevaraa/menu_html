@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005bb5;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0073e6;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+<body>
+    <header align="center"><img src="img/cropped-LOGO-UNEMI-2.png" height="250"></header>
+    <h2 align="center"><a href="menu_principal.html">regresar</a></h2>
+    <main>
+        <table align="center" border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h1>Convertir Calificaciones</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ingrese una calificacion</td>
+                    <td><input type="number" id="id-text-number"></td>
+                </tr>
+                <tr>
+                    <td>respuesta</td>
+                    <td align="center"><input type="text" id="myInput"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button onclick="ejercicio13()">Convertir</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+</body>
+<script>
+
+    function ejercicio13(){
+
+        let l;
+ 
+        let calificacion= document.getElementById("id-text-number").value
+    
+        if (calificacion<1 || calificacion>20) {
+            alert("Nota invalida")
+        } else {
+            if (calificacion>=19) {
+                document.getElementById("myInput").value = "Su calificacion es: A";
+            } else {
+                if (calificacion>=16) {
+                    document.getElementById("myInput").value = "Su calificacion es: B";
+                } else {
+                    if (calificacion>=13) {
+                        document.getElementById("myInput").value = "Su calificacion es: C";
+                    } else {
+                        if (calificacion>=10) {
+                            document.getElementById("myInput").value = "Su calificacion es: D";
+                        } else {
+                            document.getElementById("myInput").value = "Su calificacion es: E";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+</script>
+</html>

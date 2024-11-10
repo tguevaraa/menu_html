@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero primo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005bb5;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0073e6;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img/cropped-LOGO-UNEMI-2.png" height="200" alt="">
+        <h2>Algorimos de Numeros primos <a href="menu_principal.html">regresar</a> </h2>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h3>Validar numero primo</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ingrese el numero: </td>
+                    <td>
+                        <input type="number"id="id-text-numero">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="rigth">respuesta: </td>
+                    <td><input type="text" readonly id="id-text-respuesta"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button onclick="verificarNumeroPrimo()">validar</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <script>
+        function verificarNumeroPrimo(){
+        
+        let numero = document.getElementById("id-text-numero").value;
+        let contador = 2;
+        let esPrimo = true
+
+        while( contador < numero ){
+            if (numero % contador == 0){
+                esPrimo = false;
+                break;
+            }
+            contador ++;
+        }
+
+        if (esPrimo){
+            document.getElementById("id-text-respuesta").value= "el numero es primo";
+        }
+        else{
+            document.getElementById("id-text-respuesta").value= "el numero NO es primo";
+        }
+    }
+    </script>
+</body>
+</html>

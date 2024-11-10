@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros fibonnacci y primos</title>
+</head>
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        header {
+            background: #0073e6;
+            color: #000000;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005bb5;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #000000;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0073e6;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+<body>
+    <header>
+        <header>
+            <img src="./img/cropped-LOGO-UNEMI-2.png" height="200" alt=""> <h2><a href="menu_principal.html">Regresar</a></h2>
+            <img align="right" src="./img/cat-opens-moith-wide.gif" height="90" alt="">
+            <h2 style="color: #ffffff;">Quieres ver los 10 primeros numeros</h2>
+            <h2 style="color: #ffffff;">fibonnacci y saber cuantos numeros primos </h2>
+            <h2 style="color: #ffffff;">hay?</h2>
+    </header>
+    <main>
+            <button onclick="NumerosFibonnacciPrimos()">SI</button>
+        <output>
+            <h2>resultado</h2>
+                <div id="resultado"></div>
+        </output>
+                
+
+    </main>
+    <script>
+         function NumerosFibonnacciPrimos(){
+        //Realizar un algoritmo que presente los 10 primeros números Fibonacci y cuente
+        //cuántos números primos hay.
+
+        let alfa = 1, beta = 0, contador = 0, Primo = 0;
+        let fibo;
+        let resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "";
+
+        while(contador <= 10){
+            fibo = alfa + beta;
+
+            resultadoDiv.innerHTML += `${fibo}<br>`;
+
+            if(verificarNumeroPrimo(fibo)){
+                Primo ++;
+                resultadoDiv.innerHTML += "EL NUMERO ES PRIMO<br>";
+            }       
+            else{
+                resultadoDiv.innerHTML += "EL NUMERO NO ES PRIMO<br>";
+            } 
+        alfa = beta;
+        beta = fibo;
+        contador ++;
+        }
+
+        resultadoDiv.innerHTML += `EL TOTAL DE NUMEROS PRIMOS ES: ${Primo}`;
+        
+
+            function verificarNumeroPrimo(fibo){
+                
+                let contador = 2;
+                let esPrimo = true
+                let numero = 0
+
+                while( contador < fibo ){
+                    if (fibo % contador == 0){
+                        esPrimo = false;
+                        break;
+                    }
+                    contador ++;
+                }
+                return esPrimo;  
+            }
+        }
+    </script>
+</body>
+</html>
